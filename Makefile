@@ -26,6 +26,8 @@ announce_installation:
 	@echo "OK, ${PREFIX} command line tools have been installed. 🎉  Here's what's available:\n" && ${PREFIX} --list
 
 install_quiet:
+	apt-get install ruby
+	gem install rainbow --no-rdoc --no-ri -v 2.1.0
 	@install -m 755 -p $(FILES) ${DESTINATION_DIR}
 
 uninstall:
